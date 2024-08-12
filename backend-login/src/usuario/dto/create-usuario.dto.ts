@@ -1,9 +1,15 @@
 /* eslint-disable prettier/prettier */
-import { UsuarioEntity } from "../entities/usuario.entity";
 
-export class CreateUsuarioDto extends UsuarioEntity{
-    id: number;
+import { IsString } from "class-validator";
+
+
+export class CreateUsuarioDto {
+    @IsString()
     nomeUsuario: string;
+    
+    @IsString()
     emailUsuario: string;
+
+    @IsString()
     senhaUsuario: string;
 }
