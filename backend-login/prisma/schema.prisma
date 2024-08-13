@@ -14,11 +14,42 @@ model Usuario{
   nomeUsuario String
   emailUsuario String @unique
   senhaUsuario String
+  tipoUsuario TipoUsuario
+}
+
+model Estagiario{
+  idEstagiario Int @id @default(autoincrement())
+  nomeEstagiario String
+  emailEstagiario String @unique
+  senhaEstagiario String
+  funcaoEstagiario String
+  voluntario Boolean
+  tipoUsuario TipoUsuario
+}
+
+model Mentor{
+  idMentor Int @id @default(autoincrement())
+  nomeMentor String
+  emailMentor String @unique
+  senhaMentor String
+  areaMentoria String
+  linkedinMentor String
+  tipoUsuario TipoUsuario
+}
+
+model Administrativo{
+  idAdmin Int @id @default(autoincrement())
+  nomeAdmin String
+  emailAdmin String @unique
+  senhaAdmin String
+  cargo String
+  areaAdmin String
+  tipoUsuario TipoUsuario
 }
 
 enum TipoUsuario{
-  EMPRESA
   ESTAGIARIO
   MENTOR
   ADMIN
+  EXTERNO
 }

@@ -13,7 +13,6 @@ export class UsuarioService {
   constructor(private prisma: PrismaService) {}
 
   async create(createUsuarioDto: CreateUsuarioDto): Promise<UsuarioEntity>{
-    
     try{
       const usuarioExistente = await this.prisma.usuario.findUnique({
         where: { emailUsuario: createUsuarioDto.emailUsuario},
@@ -26,6 +25,7 @@ export class UsuarioService {
       const data: Prisma.UsuarioCreateInput = {
         ...createUsuarioDto,
         senhaUsuario: await bcrypt.hash(createUsuarioDto.senhaUsuario, 10),
+        tipoUsuario: 'EXTERNO'
       };
 
       const usuarioCriado = await this.prisma.usuario.create({ data });
