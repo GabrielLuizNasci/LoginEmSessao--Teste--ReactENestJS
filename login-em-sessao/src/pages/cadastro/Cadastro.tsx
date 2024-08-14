@@ -1,4 +1,5 @@
-import { Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
+import TipoUsuario from "./components/TipoUsuario";
 
 export default function Cadastro() {
     return(
@@ -24,8 +25,7 @@ export default function Cadastro() {
                     justifyContent="center"
                     borderRadius="5%"
                 >
-                    <Heading>Cadastro</Heading>
-                    <Text>Estamos passando por pequenos testes, por favor aguarde</Text>
+                    <TipoUsuario />
                 </Flex>
             </Flex>
             
