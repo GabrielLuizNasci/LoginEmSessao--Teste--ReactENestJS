@@ -2,6 +2,14 @@ import { Flex } from "@chakra-ui/react";
 import TipoUsuario from "./components/TipoUsuario";
 
 export default function Cadastro() {
+    const [tipoUsuario, setTipoUsuario] = useState('');
+    const navigate = useNavigate();
+
+    const handleTipoUsuarioSelect = (tipo: string) => {
+        setTipoUsuario(tipo);
+        navigate(`/cadastro/${tipo}`);
+    };
+
     return(
         <>
             <Flex

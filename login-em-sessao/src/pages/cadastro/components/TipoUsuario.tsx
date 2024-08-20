@@ -4,13 +4,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function TipoUsuario(){
-    const [tipoUsuario, setTipoUsuario] = useState('');
-    const navigate = useNavigate();
-
-    const handleTipoUsuarioClick = (tipo: string) => {
-        setTipoUsuario(tipo);
-        navigate(`/${tipo}`);
-    };
 
     return(
         <>
@@ -49,7 +42,10 @@ export default function TipoUsuario(){
                         <Icon icon="hugeicons:mentoring" width="1.5em" height="1.5em" style={{color: "black"}} />
                         Mentor FV
                     </Button>
-                    <Button onClick={() => handleTipoUsuarioClick('administrativo')}>
+                    <Button 
+                        flexDirection="column"
+                        onClick={() => handleTipoUsuarioClick('administrativo')}
+                    >
                         <Icon icon="eos-icons:admin-outlined" width="1.5em" height="1.5em" style={{color: "black"}} />
                         Administrador FV
                     </Button>
